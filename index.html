@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seven Surack · Tech Consulting</title>
+  <!-- Font Awesome for clean icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #fafbfc;
+      color: #1e2b37;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header / Navigation */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(46, 67, 87, 0.08);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo h1 {
+      font-weight: 600;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      color: #1e3b4f;
+    }
+
+    .logo span {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #4a6a7f;
+      margin-left: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2c4858;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1e7e8c;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background-color: #1e3b4f;
+      color: white;
+      font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 8px rgba(0,20,30,0.05);
+    }
+
+    .btn:hover {
+      background-color: #244b63;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #1e3b4f;
+      box-shadow: inset 0 0 0 1.5px #1e3b4f;
+      box-shadow: none;
+      border: 1.5px solid #1e3b4f;
+    }
+
+    .btn-outline:hover {
+      background: #eef3f7;
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 80px 0 60px;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1 1 400px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #e2eef9;
+      color: #1e4b5e;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 6px 14px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-content h2 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #14222b;
+      margin-bottom: 24px;
+    }
+
+    .hero-highlight {
+      color: #1e6b7d;
+      border-bottom: 3px solid rgba(30,107,125,0.2);
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #36505f;
+      max-width: 540px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Hero visual — simple abstract SVG imagery */
+    .hero-visual {
+      flex: 1 1 300px;
+      min-width: 280px;
+    }
+
+    .tech-illustration {
+      background: linear-gradient(145deg, #dde9f2 0%, #c2d7e6 100%);
+      border-radius: 32px;
+      padding: 28px 20px;
+      box-shadow: 0 20px 30px -10px rgba(23, 55, 70, 0.1);
+    }
+
+    .tech-svg svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 48px;
+      color: #14222b;
+      letter-spacing: -0.02em;
+    }
+
+    .section-sub {
+      color: #3a6275;
+      margin-top: -30px;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    /* Services cards */
+    .services {
+      padding: 70px 0;
+      background: #f4f8fb;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 36px 24px;
+      border-radius: 28px;
+      box-shadow: 0 10px 20px -5px rgba(30, 59, 79, 0.05);
+      transition: all 0.25s;
+      border: 1px solid #eaf0f5;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -8px rgba(26, 67, 89, 0.1);
+      border-color: #cbdde8;
+    }
+
+    .service-icon {
+      font-size: 2.6rem;
+      color: #1e6b7d;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: #1c3849;
+    }
+
+    .service-card p {
+      color: #3e5a6b;
+    }
+
+    /* About + contact combined row */
+    .about-contact {
+      padding: 70px 0;
+    }
+
+    .two-column {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .about {
+      flex: 2 1 300px;
+    }
+
+    .contact {
+      flex: 1.2 1 260px;
+      background: #f1f6fa;
+      padding: 32px 30px;
+      border-radius: 32px;
+    }
+
+    .about h3 {
+      font-size: 1.9rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #14222b;
+    }
+
+    .about p {
+      margin-bottom: 20px;
+      color: #2c4858;
+    }
+
+    .contact h3 {
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #14222b;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .contact-item i {
+      width: 28px;
+      color: #1e6b7d;
+    }
+
+    .contact-item a {
+      color: #1e3b4f;
+      text-decoration: none;
+      border-bottom: 1px dotted #8aa9bb;
+    }
+
+    .contact-item a:hover {
+      color: #0a2c38;
+      border-bottom: 1px solid;
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(46, 67, 87, 0.08);
+      color: #486b7e;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 24px;
+      }
+      .hero-content h2 {
+        font-size: 2.5rem;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo">
+      <h1>Seven Surack <span>· Tech Consulting</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-microchip" style="margin-right: 6px;"></i> Strategy · Execution · Clarity
+        </div>
+        <h2>
+          Navigate tech with <br>
+          <span class="hero-highlight">confidence & precision</span>
+        </h2>
+        <p>
+          I help businesses turn complex technology into clear, actionable advantage. 
+          From architecture guidance to digital transformation — let's build what's next.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn"><i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>Schedule a call</a>
+          <a href="#services" class="btn btn-outline">Explore services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="tech-illustration">
+          <!-- Abstract tech-inspired SVG (clean, modern) -->
+          <div class="tech-svg">
+            <svg viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="40" y="80" width="80" height="120" rx="16" fill="#1E3B4F" fill-opacity="0.08" />
+              <rect x="140" y="40" width="80" height="160" rx="16" fill="#1E6B7D" fill-opacity="0.12" />
+              <rect x="240" y="100" width="80" height="100" rx="16" fill="#2E4C63" fill-opacity="0.1" />
+              <circle cx="100" cy="60" r="24" fill="#1E6B7D" fill-opacity="0.2" />
+              <circle cx="280" cy="80" r="18" fill="#3A6B8C" fill-opacity="0.15" />
+              <path d="M70 140 L130 140 L130 180 L70 180 Z" fill="#2B5F73" fill-opacity="0.2" />
+              <path d="M170 100 L230 100 L230 150 L170 150 Z" fill="#1E3B4F" fill-opacity="0.15" />
+              <path d="M260 160 L320 160 L320 190 L260 190 Z" fill="#2C6079" fill-opacity="0.2" />
+              <line x1="100" y1="200" x2="180" y2="200" stroke="#1E6B7D" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.3" />
+              <line x1="260" y1="200" x2="340" y2="200" stroke="#1E3B4F" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.25" />
+              <circle cx="200" cy="200" r="6" fill="#1E6B7D" fill-opacity="0.4" />
+            </svg>
+          </div>
+          <p style="text-align: right; margin-top: 12px; font-weight: 500; color: #1e4b5e; opacity: 0.8;">
+            <i class="fas fa-code-branch"></i>  clarity in complexity
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">How I help tech leaders</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-sitemap"></i></div>
+          <h3>Architecture & Strategy</h3>
+          <p>Scalable system design, cloud migration roadmaps, and technical due diligence. Align technology with business goals.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Growth & Optimization</h3>
+          <p>Performance audits, cost reduction, and team workflow improvements. Unlock speed and reliability in your stack.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-users-cog"></i></div>
+          <h3>Tech Leadership</h3>
+          <p>Fractional CTO / advisory for early-stage and scaling companies. Mentorship and bridging tech with executive vision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Contact -->
+  <section id="about" class="about-contact">
+    <div class="container two-column">
+      <div class="about">
+        <h3>Seven Surack</h3>
+        <p>I’m a technology strategist with 12+ years of experience across software engineering, cloud infrastructure, and product leadership. I’ve guided startups and established firms through pivotal technical decisions—whether it’s re-architecting a monolith, adopting AI tooling, or simply making sense of the noise.</p>
+        <p>My approach is collaborative and jargon‑free. I focus on <strong>pragmatic solutions</strong> that respect your team’s culture and your budget. Based in Austin, I work with clients across North America and Europe.</p>
+        <p><i class="fas fa-check-circle" style="color: #1e6b7d; margin-right: 8px;"></i> Previously: Tech Lead at Vantage AI, Principal Architect at Clearstack.</p>
+      </div>
+      <div id="contact" class="contact">
+        <h3>Let's connect</h3>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:seven@seven-surack.consulting">seven@seven-surack.consulting</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="#">linkedin.com/in/sevensurack</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <a href="#">github.com/sevensurack</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>+1 (512) 555–0198</span>
+        </div>
+        <div style="margin-top: 28px;">
+          <a href="mailto:seven@seven-surack.consulting" class="btn" style="display: block; text-align: center;">
+            <i class="fas fa-paper-plane"></i> Send a message
+          </a>
+        </div>
+        <p style="margin-top: 24px; font-size: 0.9rem; color: #3a6275;">
+          <i class="far fa-clock"></i> Typically replies within a few hours
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Seven Surack · Tech Consulting. Clarity, strategy, execution.</p>
+    <p style="margin-top: 12px; opacity: 0.7; font-size: 0.9rem;">
+      <i class="fas fa-circle" style="font-size: 0.4rem; vertical-align: middle;"></i> 
+      Built for GitHub Pages · Professional presence
+    </p>
+  </div>
+</footer>
+
+<!-- Smooth scroll for anchor links -->
+<script>
+  (function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === "#" || href === "") return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
