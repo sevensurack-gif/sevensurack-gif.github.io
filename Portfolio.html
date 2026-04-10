@@ -1,1 +1,209 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio · Seven Surack Consulting</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #fafbfc;
+      color: #1e2b37;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(46, 67, 87, 0.08);
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo h1 {
+      font-weight: 600;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      color: #1e3b4f;
+    }
+    .logo span {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #4a6a7f;
+      margin-left: 6px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2c4858;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #1e7e8c;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #14222b;
+    }
+    .section-sub {
+      color: #3a6275;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+    .portfolio {
+      padding: 70px 0;
+      background: white;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .portfolio-card {
+      background: #fafbfc;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #e6edf3;
+      transition: all 0.25s;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -8px rgba(26, 67, 89, 0.08);
+      border-color: #cbdde8;
+    }
+    .portfolio-img {
+      background: linear-gradient(145deg, #dde9f2, #c2d7e6);
+      padding: 32px 24px 16px;
+      text-align: center;
+      font-size: 3.2rem;
+      color: #1e6b7d;
+    }
+    .portfolio-content {
+      padding: 24px 22px 28px;
+    }
+    .portfolio-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1e6b7d;
+      background: #e2eef9;
+      padding: 4px 12px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+    }
+    .portfolio-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1c3849;
+    }
+    .portfolio-content p {
+      color: #3e5a6b;
+    }
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(46, 67, 87, 0.08);
+      color: #486b7e;
+      text-align: center;
+    }
+    @media (max-width: 700px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo">
+      <h1>Seven Surack <span>· Business & Tech Consulting</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2 class="section-title">Recent outcomes</h2>
+      <p class="section-sub">Real work with local organizations</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-img"><i class="fas fa-clipboard-list"></i></div>
+          <div class="portfolio-content">
+            <span class="portfolio-tag">HR Operations</span>
+            <h3>Homecare Provider Revamp</h3>
+            <p>Overhauled HR policies and workflows for a local homecare agency. Standardized onboarding, reduced turnover paperwork delays by 60%.</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img"><i class="fas fa-hand-holding-heart"></i></div>
+          <div class="portfolio-content">
+            <span class="portfolio-tag">Workforce Development</span>
+            <h3>Nonprofit Staffing & Engagement</h3>
+            <p>Managed workforce planning and new client outreach for a community nonprofit. Helped expand service capacity by 40% without adding headcount.</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img"><i class="fas fa-building"></i></div>
+          <div class="portfolio-content">
+            <span class="portfolio-tag">Business Management</span>
+            <h3>Family-Owned Manufacturer</h3>
+            <p>Streamlined scheduling, inventory communication, and shift handoffs for a third-generation shop. Cut administrative overtime by 15 hours weekly.</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img"><i class="fas fa-user-check"></i></div>
+          <div class="portfolio-content">
+            <span class="portfolio-tag">Talent Strategy</span>
+            <h3>Professional Services Firm</h3>
+            <p>Redesigned the hiring process and performance review cadence for a 50‑person consulting firm. Time‑to‑hire dropped from 47 to 22 days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Seven Surack · Business & Tech Consulting. Clarity, strategy, execution.</p>
+  </div>
+</footer>
+
+</body>
+</html>
