@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact · Seven Surack Consulting</title>
+  <title>About · Seven Surack Consulting</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -67,59 +67,53 @@
       border-radius: 40px;
       text-decoration: none;
       transition: background 0.2s;
-      box-shadow: 0 4px 8px rgba(0,20,30,0.05);
     }
     .btn:hover {
       background-color: #244b63;
     }
-    .contact-page {
+    .about-page {
       padding: 70px 0;
     }
-    .contact-content {
-      max-width: 600px;
+    .about-content {
+      max-width: 800px;
       margin: 0 auto;
-      background: #f1f6fa;
-      padding: 40px;
-      border-radius: 32px;
       text-align: center;
     }
-    /* Profile photo styling */
-    .profile-photo {
-      width: 150px;
-      height: 150px;
+    /* Larger profile photo styling */
+    .profile-photo-large {
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid white;
-      box-shadow: 0 8px 20px rgba(30, 59, 79, 0.1);
-      margin-bottom: 24px;
+      border: 5px solid white;
+      box-shadow: 0 12px 30px rgba(30, 59, 79, 0.15);
+      margin-bottom: 32px;
     }
-    .contact-content h2 {
+    .about-content h2 {
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 30px;
       color: #14222b;
     }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
+    .about-text {
+      text-align: left;
+      margin-top: 20px;
+    }
+    .about-content p {
       margin-bottom: 24px;
-      font-size: 1.2rem;
+      color: #2c4858;
+      font-size: 1.1rem;
     }
-    .contact-item i {
-      width: 32px;
+    .about-highlight {
+      background: #f1f6fa;
+      padding: 30px;
+      border-radius: 24px;
+      margin: 40px 0;
+      text-align: left;
+    }
+    .about-highlight i {
       color: #1e6b7d;
-      font-size: 1.5rem;
-    }
-    .contact-item a {
-      color: #1e3b4f;
-      text-decoration: none;
-      border-bottom: 1px dotted #8aa9bb;
-    }
-    .contact-item a:hover {
-      color: #0a2c38;
-      border-bottom: 1px solid;
+      margin-right: 10px;
     }
     footer {
       padding: 30px 0;
@@ -131,6 +125,10 @@
       .header-content {
         flex-direction: column;
         align-items: flex-start;
+      }
+      .profile-photo-large {
+        width: 180px;
+        height: 180px;
       }
     }
   </style>
@@ -153,39 +151,22 @@
 </header>
 
 <main>
-  <section class="contact-page">
-    <div class="container contact-content">
-      <img src="images/sevensurack.jpg" alt="Seven Surack" class="profile-photo">
+  <section class="about-page">
+    <div class="container about-content">
+      <!-- 👇 Large profile photo 👇 -->
+      <img src="seven.jpg" alt="Seven Surack" class="profile-photo-large">
+      <!-- If your image is in an "images" folder, change src to "images/seven.jpg" -->
       
-      <h2>Let's connect</h2>
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:sevensurack@gmail.com">sevensurack@gmail.com</a>
+      <h2>About Seven Surack</h2>
+      <div class="about-text">
+        <p>I'm a business operations strategist with 12+ years of experience across HR, workforce development, and technology alignment. I've guided local manufacturers, homecare agencies, and nonprofits through messy operational challenges — whether it's fixing broken hiring pipelines, documenting tribal knowledge, or getting the right tools in place without the IT headache.</p>
+        <p>My approach is collaborative and jargon‑free. I focus on <strong>pragmatic solutions</strong> that respect your team's culture and your budget. Based in Northeast Ohio, I work with clients across the Youngstown area and beyond.</p>
       </div>
-      <div class="contact-item">
-        <i class="fab fa-linkedin"></i>
-        <a href="https://www.linkedin.com/in/seven-surack-5148912b8/">linkedin.com/in/seven-surack</a>
+      <div class="about-highlight">
+        <p><i class="fas fa-check-circle"></i> <strong>Previously:</strong> Workforce Development, HR Consulting, Talent Management Advertising, Marketing Management, and Succession Planning.</p>
+        <p style="margin-top: 16px;"><i class="fas fa-map-pin"></i> <strong>Based in:</strong> Northeast Ohio (Youngstown area)</p>
       </div>
-      <div class="contact-item">
-        <i class="fab fa-github"></i>
-        <a href="https://github.com/sevensurack-gif/">github.com/sevensurack-gif</a>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-phone-alt"></i>
-        <span>(330) 574-1682</span>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="https://calendly.com/sevensurack/consultation" target="_blank">Schedule a call via Calendly</a>
-      </div>
-      <div style="margin-top: 36px;">
-        <a href="mailto:sevensurack@gmail.com" class="btn" style="display: block; text-align: center;">
-          <i class="fas fa-paper-plane"></i> Send a message
-        </a>
-      </div>
-      <p style="margin-top: 24px; font-size: 0.9rem; color: #3a6275; text-align: center;">
-        <i class="far fa-clock"></i> Typically replies within a few hours
-      </p>
+      <a href="contact.html" class="btn"><i class="fas fa-envelope" style="margin-right: 8px;"></i>Get in touch</a>
     </div>
   </section>
 </main>
