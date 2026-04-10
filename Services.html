@@ -1,1 +1,187 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services · Seven Surack Consulting</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #fafbfc;
+      color: #1e2b37;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(46, 67, 87, 0.08);
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo h1 {
+      font-weight: 600;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      color: #1e3b4f;
+    }
+    .logo span {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #4a6a7f;
+      margin-left: 6px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2c4858;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #1e7e8c;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #1e3b4f;
+      color: white;
+      font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 4px 8px rgba(0,20,30,0.05);
+    }
+    .btn:hover {
+      background-color: #244b63;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 48px;
+      color: #14222b;
+      letter-spacing: -0.02em;
+    }
+    .services {
+      padding: 70px 0;
+      background: #f4f8fb;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: white;
+      padding: 36px 24px;
+      border-radius: 28px;
+      box-shadow: 0 10px 20px -5px rgba(30, 59, 79, 0.05);
+      transition: all 0.25s;
+      border: 1px solid #eaf0f5;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -8px rgba(26, 67, 89, 0.1);
+      border-color: #cbdde8;
+    }
+    .service-icon {
+      font-size: 2.6rem;
+      color: #1e6b7d;
+      margin-bottom: 24px;
+    }
+    .service-card h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: #1c3849;
+    }
+    .service-card p {
+      color: #3e5a6b;
+    }
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(46, 67, 87, 0.08);
+      color: #486b7e;
+      text-align: center;
+    }
+    @media (max-width: 700px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo">
+      <h1>Seven Surack <span>· Business & Tech Consulting</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">How I help leaders</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-sitemap"></i></div>
+          <h3>Process & Workflow</h3>
+          <p>Streamline operations, reduce administrative drag, and document the systems that let your team scale smoothly.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-users"></i></div>
+          <h3>Workforce Strategy</h3>
+          <p>Talent planning, performance structures, and onboarding that actually works for growing organizations.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Business & Tech Alignment</h3>
+          <p>Bridge the gap between your daily operations and the tools/tech you already own. Practical, no‑jargon guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Seven Surack · Business & Tech Consulting. Clarity, strategy, execution.</p>
+  </div>
+</footer>
+
+</body>
+</html>
